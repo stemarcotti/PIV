@@ -6,12 +6,15 @@ listing = dir (fullfile (d, 'cb*.tif'));
 numFiles = length (listing);
 
 % ask the user for an ouput stamp
-prompt = {'Provide a name for the output files', 'Movie ID (n) if file format is cb_(n)_m.tif'};
+prompt = {'Provide a name for the output files',...
+    'Movie ID (n) if file format is cb_(n)_m.tif',...
+    'Max flow velocity to be displayed in colourmap [um/min]'};
 title = 'Parameters';
 dims = [1 35];
 user_answer = inputdlg(prompt,title,dims);
 output_name = (user_answer{1,1});
 mt = str2double(user_answer{2,1});
+colour_max_val = str2double(user_answer{3,1}); % [um/min]
 
 % parameters
 dilationSize = 4;  % [px]
@@ -23,7 +26,6 @@ outline_dilation_size = 4;  % [px]
 outline_erosion_size = 1;   % [px]
 vector_spacing = 25;  % [px]
 colour_min_val = 0;   % [um/min]
-colour_max_val = 12;  % [um/min]
 
 % read in the interpolated flow field
 vfilt = load (fullfile ([d '/data'], ['piv_field_interpolated_', output_name, '.mat']));
