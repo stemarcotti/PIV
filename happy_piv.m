@@ -350,7 +350,7 @@ if strcmp(interp_q, 'Yes')
     % save interpolated flow data to .mat file
     save(fullfile(directory, 'data', ...
         ['piv_field_interpolated_', output_name,'.mat']), ...
-        'vfilt');
+        'vfilt', '-v7.3');
 
 
     % save PIV parameters in [parameters]
