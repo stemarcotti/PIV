@@ -93,7 +93,7 @@ end
 
 
 % show current frame
-imshow(im1);
+imshow(im1, []);
 
 % add cell edge in magenta
 hold on
