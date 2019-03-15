@@ -65,9 +65,9 @@ while happy_test == 0
     params.recording_speed = str2double(user_answer{6,1}) * params.frame_rate;  % recording speed (frame interval [s])
     fps = 1 / params.recording_speed;	% frames per second [frame/s]
 
-    params.source_size = source_size_user/params.mu2px;  % [px]
-    params.search_size = search_size_user/params.mu2px;  % [px]
-    params.grid_distance = grid_distance_user/params.mu2px;  %[px]
+    params.source_size = round(source_size_user/params.mu2px);  % [px]
+    params.search_size = round(search_size_user/params.mu2px);  % [px]
+    params.grid_distance = round(grid_distance_user/params.mu2px);  %[px]
 
     % ask the user if they want to run the test frame correlation on the
     % first frame
@@ -166,8 +166,9 @@ if strcmp(interp_q, 'Yes')
     params.k_size_user = str2double(user_answer{1,1});  % spatial kernel size [um]
     params.k_sigma_user = str2double(user_answer{2,1}); % spatial kernel sigma [um]
     params.max_flow_vel = str2double(user_answer{3,1});	% max flow velocity [um/min]
-    params.flow_field_arrow_distance = str2double(user_answer{4,1})/params.mu2px;	% arrow spatial resolution [px]
-
+    params.flow_field_arrow_distance = round(str2double(user_answer{4,1})/params.mu2px);	% arrow spatial resolution [px]
+    params.flow_field_arrow_distance = round(params.flow_field_arrow_distance);
+    
     % change unit to parameters
     k_size = 2 * (ceil(0.5 * params.k_size_user / params.mu2px));	% spatial kernel size [px]
     k_sigma = 2 * (ceil(0.5 * params.k_sigma_user / params.mu2px));	% spatial kernel sigma [px]
