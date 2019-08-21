@@ -37,7 +37,8 @@ B = bwboundaries(BW2);
 y = smooth(B{1,1}(:,1),6);
 x = smooth(B{1,1}(:,2),6);
 
-eroded_BW2 = imerode(BW2, strel('disk', params.search_size));
+eroded_BW2 = imerode(BW2, strel('disk', round(params.search_size/2)));
+% eroded_BW2 = imerode(BW2, strel('disk', erode_radius));
 %% PIV
 
 n = 1;
