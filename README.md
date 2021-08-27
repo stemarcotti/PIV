@@ -2,6 +2,8 @@
 
 Particle Image Velocimetry (PIV) package developed in the Stramer Lab (King's College London, UK). Please check [our publication on Nature Cell Biology](https://www.nature.com/articles/s41556-019-0411-5) for more details ([release v1.0](https://github.com/stemarcotti/PIV/releases)).
 
+An introduction to the software and a live demonstration can be found [here](https://www.youtube.com/watch?v=SwHozdoo7Sw), in a recorded talk of the SORSE (Series of Online Research Software Events) series.
+
 Tested on MATLAB v2018B. The Curve Fitting Toolbox is required.
 
 This PIV code comes without a graphic user interface (GUI) and should be run in MATLAB as a script (open .m file and hit Run). It is used as follow.
